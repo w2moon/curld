@@ -36,3 +36,9 @@ curld -d ./my-files http://xxx.xxx.xxx.xxx:xxxx/new-path/path-to-file
 - Maintain directory structure when uploading files
 - Display upload progress and results
 - Support asynchronous operations for better performance
+- Specifically designed for uploading to dufs servers
+- Only supports HTTP PUT method for file uploads
+
+## Notes
+
+This tool is primarily designed for uploading directories to dufs servers. It uses HTTP PUT method for all file uploads, which is the required method for dufs server operations.
