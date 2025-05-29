@@ -1,28 +1,38 @@
 # curld
 
-一个简单的命令行工具，用于将本地目录中的文件上传到指定的 HTTP 服务器。
+A simple command-line tool for uploading local directories to HTTP servers.
 
-## 安装
+## Installation
+
+### From crates.io
 
 ```bash
+cargo install curld
+```
+
+### From source
+
+```bash
+git clone https://github.com/w2moon/curld.git
+cd curld
 cargo install --path .
 ```
 
-## 使用方法
+## Usage
 
 ```bash
-curld -d <本地目录路径> <目标URL>
+curld -d <local-directory> <target-url>
 ```
 
-例如：
+Example:
 
 ```bash
-curld -d ./my-files http://192.168.3.250:7799/new-path/path-to-file
+curld -d ./my-files http://xxx.xxx.xxx.xxx:xxxx/new-path/path-to-file
 ```
 
-## 功能
+## Features
 
-- 递归遍历指定目录中的所有文件
-- 保持目录结构上传文件
-- 显示上传进度和结果
-- 支持异步操作，提高上传效率
+- Recursively traverse all files in the specified directory
+- Maintain directory structure when uploading files
+- Display upload progress and results
+- Support asynchronous operations for better performance
