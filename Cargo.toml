@@ -2,6 +2,13 @@
 name = "curld"
 version = "0.1.0"
 edition = "2021"
+description = "A command-line tool for uploading directories to HTTP servers"
+license = "MIT"
+repository = "https://github.com/w2moon/curld"
+readme = "README.md"
+keywords = ["upload", "http", "cli", "file-transfer"]
+categories = ["command-line-utilities", "web-programming::http-client"]
+authors = ["w2moon <w2moon@gmail.com>"]
 
 [dependencies]
 clap = { version = "4.4", features = ["derive"] }

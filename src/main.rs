@@ -1,6 +1,5 @@
 use anyhow::{Context, Result};
 use clap::Parser;
-use reqwest::multipart::{Form, Part};
 use std::path::PathBuf;
 use tokio::fs::File;
 use tokio::io::AsyncReadExt;
@@ -42,15 +41,11 @@ async fn main() -> Result<()> {
             let mut contents = Vec::new();
             file.read_to_end(&mut contents).await?;
             
-            // 创建multipart表单
-            let form = Form::new()
-                .part("file", Part::bytes(contents).file_name(relative_path.to_string_lossy().to_string()));
-            
-            // 发送请求
+            // 发送PUT请求，直接上传文件内容
             let client = reqwest::Client::new();
             let response = client
-                .post(&url)
-                .multipart(form)
+                .put(&url)
+                .body(contents)
                 .send()
                 .await
                 .context("上传文件失败")?;
